@@ -1,6 +1,6 @@
 [user]
-  name = Jeff Geerling
-  email = geerlingguy@mac.com
+  name = Ruben Ernst
+  email = 4404015+Ruben-E@users.noreply.github.com
 [core]
   editor = vi
   excludesfile = ~/.gitignore
@@ -13,13 +13,11 @@
 [init]
   defaultBranch = master
 [web]
-  browser = google-chrome
+  browser = firefox
 [credential]
   helper = osxkeychain
 [push]
   default = simple
-[merge]
-  tool = kdiff3
 [difftool]
   prompt = false
 [alias]
@@ -30,5 +28,3 @@
   d = diff
   dc = diff --cached
   l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
-[pull]
-	rebase = true
