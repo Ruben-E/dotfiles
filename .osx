@@ -36,6 +36,12 @@ fi
 # General UI/UX                                                               #
 ###############################################################################
 
+# No sound on boot
+sudo nvram SystemAudioVolume=" "
+
+# Always show scroll bar
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
