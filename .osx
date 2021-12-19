@@ -319,6 +319,12 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ###############################################################################
+# NVM                                                                         #
+###############################################################################
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+###############################################################################
 # Kill/restart affected applications                                          #
 ###############################################################################
 
