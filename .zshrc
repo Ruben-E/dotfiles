@@ -118,29 +118,29 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # alias docker=podman
-alias cd_greps="cd /Users/rubenernst/Development/Openvalue/Projects/Greps/greps"
-alias cd_greps_d="cd /Users/rubenernst/greps-dev"
-alias cd_dalton="cd /Users/rubenernst/Development/Openvalue/Projects/Dalton"
-
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-
-## GREPS
-export SOURCE_ROOT="/Users/rubenernst/Development/Openvalue/Projects/Greps/greps"
-
-
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionexport PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# Load Angular CLI autocompletion.
-# source <(ng completion script)
+#export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-source <(ret configure autocomplete-zsh)
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:themezplug load
+zplug "zdharma/fast-syntax-highlighting", as:plugin, defer:2
+zplug "zsh-users/zsh-autosuggestions", as:plugin, defer:2
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
